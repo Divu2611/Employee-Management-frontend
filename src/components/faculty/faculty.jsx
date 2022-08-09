@@ -31,9 +31,20 @@ class Faculty extends Component {
 
             if (faculties.length === 0)
                 return (
-                    <div className="tableheading mt-5">
-                        <h1>No Faculties</h1>
-                    </div>
+                    <React.Fragment>
+                        <h1 className="my-5 py-2 px-5" style={{ backgroundColor: "#D3D3D3" }}>
+                            Faculties
+                            {emp.isAdmin &&
+                                <span style={{ float: "right" }}>
+                                    <Link to="/faculty/new">
+                                        <i className="fa fa-plus" aria-hidden="true"></i>
+                                    </Link>
+                                </span>}
+                        </h1>
+                        <div className="tableheading mt-5">
+                            <h1>No Faculties</h1>
+                        </div>
+                    </React.Fragment>
                 );
 
             return (

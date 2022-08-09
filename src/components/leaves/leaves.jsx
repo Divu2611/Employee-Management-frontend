@@ -111,6 +111,11 @@ class Leave extends Form {
                             </React.Fragment>
                         }
 
+                        {
+                            employeeType.Designation[0] === "Director" &&
+                            this.handleLeaves()
+                        }
+
                         {employee.isAdmin &&
                             <div className="mt-3">
                                 <h3>
@@ -161,6 +166,11 @@ class Leave extends Form {
                         </React.Fragment>
                     }
 
+                    {
+                        employeeType.Designation[0] === "Director" &&
+                        this.handleLeaves()
+                    }
+
                     {employee.isAdmin &&
                         <div className="mt-3">
                             <h3>
@@ -177,6 +187,10 @@ class Leave extends Form {
 
     handlePageChange = (page) => {
         this.setState({ currentPage: page });
+    }
+
+    handleLeaves = () => {
+        window.location = "/leaves/handle";
     }
 }
 

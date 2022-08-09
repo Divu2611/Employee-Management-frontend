@@ -28,6 +28,25 @@ class Staff extends Component {
         const emp = auth.getCurrentEmployee();
 
         if (staffs) {
+
+            if (staffs.length === 0)
+                return (
+                    <React.Fragment>
+                        <h1 className="my-5 py-2 px-5" style={{ backgroundColor: "#D3D3D3" }}>
+                            Staffs
+                            {emp.isAdmin &&
+                                <span style={{ float: "right" }}>
+                                    <Link to="/staff/new">
+                                        <i className="fa fa-plus" aria-hidden="true"></i>
+                                    </Link>
+                                </span>}
+                        </h1>
+                        <div className="tableheading mt-5">
+                            <h1>No Staffs</h1>
+                        </div>
+                    </React.Fragment>
+                );
+
             return (
                 <div className="mt-5">
                     <h1 className="my-5 py-2 px-5" style={{ backgroundColor: "#D3D3D3" }}>
